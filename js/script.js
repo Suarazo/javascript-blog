@@ -74,24 +74,27 @@ function generateTitleLinks(){
 
     let html = '';
 
-    for(let article of articles){
-    /* get the article id */
-      const articleId = article.getAttribute('id');
+      for(let article of articles){
+      /* get the article id */
+        const articleId = article.getAttribute('id');
 
-    /* find the title element */
-      const titleElement = article.querySelector(optTitleSelector);
+      /* find the title element */
+        const titleElement = article.querySelector(optTitleSelector);
 
-    /* get the title from the title element */
+      /* get the title from the title element */
 
-    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+        const articleTitle = titleElement.innerHTML;
 
-    /* create HTML of the link */
+      /* create HTML of the link */
 
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-    console.log(linkHTML);
-    /* insert link into titleList */
-    html = html + linkHTML;
-  }
+        const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+
+      /* insert link into titleList */
+
+        html = html + linkHTML;
+
+        console.log('licznik', html);
+      }
 
   titleList.innerHTML = html;
 
